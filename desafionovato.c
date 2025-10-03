@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <locale.h>
 int main() {
-
+    setlocale(LC_ALL, "Portuguese_Brazil.1252");
     //variaveis
     char estadoCarta1[10];
     char codigoCarta1[10];
@@ -11,10 +12,7 @@ int main() {
     int pontoTuristicosCarta1;
     float densidadepopulacional1;
     float pibpercapita1;
-
-
-     
-    
+      
     //coleta do estado 
     printf("Digite o estado: ");
     scanf(" %s", estadoCarta1);
