@@ -155,89 +155,67 @@ int main() {
 
                 printf("--------------------- \n");
 
-                //comparacao entre as 2 cartas
-                printf("Comparação de cartas \n");
+                //menu de comparação
+                printf("Escolha a categoria para comparar as cartas: \n");
+                printf("1 - População \n");
+                printf("2 - Área \n");
+                printf("3 - PIB \n");
+                printf("4 - Pontos turísticos \n");
+                printf("5 - Densidade demográfica \n");
 
+                int categoria;
+                printf("Digite o número da categoria escolhida: "); 
+                scanf("%d", &categoria);
+                printf("--------------------- \n");
+                switch (categoria)
+                {
+                case 1:
                     if (populacaoCarta1 > populacaoCarta2){
-                        printf("Carta 1 venceu a carta 2 na categoria população\n");
+                        printf("%s venceu %s na categoria população\n",nomeCarta1, nomeCarta2);
                     } else if (populacaoCarta1 < populacaoCarta2){
-                        printf("Carta 2 venceu a carta 1 na categoria população\n");
+                        printf("%s venceu %s na categoria população\n",nomeCarta2, nomeCarta1);
                     } else {
                         printf("As cartas empataram na categoria população\n");
                     }
-
-                    // Área
+                    break;
+                case 2:
                     if (areaCarta1 > areaCarta2){
-                        printf("Carta 1 venceu a carta 2 na categoria área\n");
+                        printf("%s venceu %s na categoria área\n", nomeCarta1, nomeCarta2);
                     } else if (areaCarta1 < areaCarta2){
-                        printf("Carta 2 venceu a carta 1 na categoria área\n");
+                        printf("%s venceu %s na categoria área\n", nomeCarta2, nomeCarta1);
                     } else {
                         printf("As cartas empataram na categoria área\n");
                     }
-
-                    // PIB
+                    break;
+                case 3:
                     if (pibCarta1 > pibCarta2){
-                        printf("Carta 1 venceu a carta 2 na categoria PIB\n");
+                        printf("%s venceu %s na categoria PIB\n", nomeCarta1, nomeCarta2);
                     } else if (pibCarta1 < pibCarta2){
-                        printf("Carta 2 venceu a carta 1 na categoria PIB\n");
+                        printf("%s venceu %s na categoria PIB\n", nomeCarta2, nomeCarta1);
                     } else {
                         printf("As cartas empataram na categoria PIB\n");
                     }
-
-                    // Pontos turísticos
+                    break;
+                case 4:
                     if (pontoTuristicosCarta1 > pontoTuristicosCarta2){
-                        printf("Carta 1 venceu a carta 2 na categoria pontos turísticos\n");
+                        printf("%s venceu %s na categoria pontos turísticos\n", nomeCarta1, nomeCarta2);
                     } else if (pontoTuristicosCarta1 < pontoTuristicosCarta2){
-                        printf("Carta 2 venceu a carta 1 na categoria pontos turísticos\n");
+                        printf("%s venceu %S na categoria pontos turísticos\n", nomeCarta2, nomeCarta1);
                     } else {
                         printf("As cartas empataram na categoria pontos turísticos\n");
                     }
-
-                    // PIB per capita
-                    if (pibpercapita1 > pibpercapita2){
-                        printf("Carta 1 venceu a carta 2 na categoria PIB per capita\n");
-                    } else if (pibpercapita1 < pibpercapita2){
-                        printf("Carta 2 venceu a carta 1 na categoria PIB per capita\n");
-                    } else {
-                        printf("As cartas empataram na categoria PIB per capita\n");
-                    }
-
-                    // Densidade populacional (inverso: menor vence)
+                    break;
+                case 5:
                     if (densidadepopulacional1 < densidadepopulacional2){
-                        printf("Carta 1 venceu a carta 2 na categoria densidade populacional\n");
+                        printf("%s venceu %s na categoria densidade demográfica\n", nomeCarta1, nomeCarta2);
                     } else if (densidadepopulacional1 > densidadepopulacional2){
-                        printf("Carta 2 venceu a carta 1 na categoria densidade populacional\n");
+                        printf("%s venceu a %s na categoria densidade demográfica\n", nomeCarta2, nomeCarta1);
                     } else {
-                        printf("As cartas empataram na categoria densidade populacional\n");
-                    }
+                        printf("As cartas empataram na categoria densidade demográfica\n");
+                    }  
 
-                //Variavel superpoder
-                double superpoder1 = (double)populacaoCarta1 
-                                    + (double)areaCarta1 
-                                    + (double)pibCarta1 
-                                    + (double)pontoTuristicosCarta1 
-                                    + pibpercapita1  // já é float, vai ser convertido automaticamente
-                                    + densidadepopulacional1; // já é float
-
-
-                double superpoder2 = (double)populacaoCarta2 
-                                    + (double)areaCarta2 
-                                    + (double)pibCarta2 
-                                    + (double)pontoTuristicosCarta2 
-                                    + pibpercapita2 
-                                    + densidadepopulacional2;                    
-
-
-                printf("SuperPoder carta 1 %.2f \nSuperPoder carta 2: %.2f \n", superpoder1, superpoder2);
-                if (superpoder1 > superpoder2){
-                    printf("Carta 1 é a vencedora do Super Trunfo \n");
-                } else if (superpoder2 > superpoder1){
-                    printf("Carta 2 é a vencedora do Super Trunfo \n");
-                } else {
-                    printf("As cartas empataram no Super Trunfo \n");
                 }
 
-    
                 return 0;
 
 }    
